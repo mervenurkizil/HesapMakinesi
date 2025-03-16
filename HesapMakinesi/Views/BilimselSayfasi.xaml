@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HesapMakinesi.Views.BilimselSayfasi"
+             Title="Bilimsel">
+
+    <Grid RowDefinitions="Auto, *" 
+          Padding="10" 
+          BackgroundColor="#f0f0f0">
+
+        <!-- ekran -->
+        <Grid Grid.Row="0" RowDefinitions="Auto, Auto">
+            <Label x:Name="IslemGecmisi"
+                   Text="" 
+                   FontSize="18"
+                   TextColor="black"
+                   HorizontalOptions="End"
+                   Margin="10,5"/>
+
+            <Label x:Name="SonucEkrani" 
+                   Grid.Row="1"
+                   Text="0" 
+                   FontSize="36"
+                   FontAttributes="Bold"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center"
+                   TextColor="black"
+                   Margin="10"/>
+        </Grid>
+
+        <!-- 7 satır 5 sütun oluştur -->
+        <Grid Grid.Row="1" 
+              RowDefinitions="*,*,*,*,*,*,*"
+              ColumnDefinitions="*,*,*,*,*"
+              RowSpacing="4"
+              ColumnSpacing="4">
+
+            <!-- 1 -->
+            <Button Grid.Row="0" Grid.Column="0" Text="MC" FontSize="16" BackgroundColor="#e6e6e6" TextColor="Black" Clicked="HafizaButon_Clicked"/>
+            <Button Grid.Row="0" Grid.Column="1" Text="MR" FontSize="16" BackgroundColor="#e6e6e6" TextColor="Black" Clicked="HafizaButon_Clicked"/>
+            <Button Grid.Row="0" Grid.Column="2" Text="M+" FontSize="16" BackgroundColor="#e6e6e6" TextColor="Black" Clicked="HafizaButon_Clicked"/>
+            <Button Grid.Row="0" Grid.Column="3" Text="M-" FontSize="16" BackgroundColor="#e6e6e6" TextColor="Black" Clicked="HafizaButon_Clicked"/>
+            <Button Grid.Row="0" Grid.Column="4" Text="C" FontSize="16" BackgroundColor="Gray" TextColor="Black" Clicked="TemizleButon_Clicked"/>
+
+            <!-- 2 -->
+            <Button Grid.Row="1" Grid.Column="0" Text="sin" FontSize="16" BackgroundColor="#d9d9d9" TextColor="Black" Clicked="BilimselButon_Clicked"/>
+            <Button Grid.Row="1" Grid.Column="1" Text="cos" FontSize="16" BackgroundColor="#d9d9d9" TextColor="Black" Clicked="BilimselButon_Clicked"/>
+            <Button Grid.Row="1" Grid.Column="2" Text="tan" FontSize="16" BackgroundColor="#d9d9d9" TextColor="Black" Clicked="BilimselButon_Clicked"/>
+            <Button Grid.Row="1" Grid.Column="3" Text="(" FontSize="16" BackgroundColor="#d9d9d9" TextColor="Black" Clicked="ParantezButon_Clicked"/>
+            <Button Grid.Row="1" Grid.Column="4" Text=")" FontSize="16" BackgroundColor="#d9d9d9" TextColor="Black" Clicked="ParantezButon_Clicked"/>
+
+            <!-- 3 -->
+            <Button Grid.Row="2" Grid.Column="0" Text="x²" FontSize="16" BackgroundColor="#d9d9d9" TextColor="Black" Clicked="BilimselButon_Clicked"/>
+            <Button Grid.Row="2" Grid.Column="1" Text="xʸ" FontSize="16" BackgroundColor="#d9d9d9" TextColor="Black" Clicked="IslemButon_Clicked"/>
+            <Button Grid.Row="2" Grid.Column="2" Text="√" FontSize="16" BackgroundColor="#d9d9d9" TextColor="Black" Clicked="BilimselButon_Clicked"/>
+            <Button Grid.Row="2" Grid.Column="3" Text="log" FontSize="16" BackgroundColor="#d9d9d9" TextColor="Black" Clicked="BilimselButon_Clicked"/>
+            <Button Grid.Row="2" Grid.Column="4" Text="ln" FontSize="16" BackgroundColor="#d9d9d9" TextColor="Black" Clicked="BilimselButon_Clicked"/>
+
+            <!-- 4 -->
+            <Button Grid.Row="3" Grid.Column="0" Text="π" FontSize="16" BackgroundColor="#d9d9d9" TextColor="Black" Clicked="SabitButon_Clicked"/>
+            <Button Grid.Row="3" Grid.Column="1" Text="7" FontSize="20" BackgroundColor="White" TextColor="Black" Clicked="RakamButon_Clicked"/>
+            <Button Grid.Row="3" Grid.Column="2" Text="8" FontSize="20" BackgroundColor="White" TextColor="Black" Clicked="RakamButon_Clicked"/>
+            <Button Grid.Row="3" Grid.Column="3" Text="9" FontSize="20" BackgroundColor="White" TextColor="Black" Clicked="RakamButon_Clicked"/>
+            <Button Grid.Row="3" Grid.Column="4" Text="÷" FontSize="20" BackgroundColor="#e6e6e6" TextColor="Black" Clicked="IslemButon_Clicked"/>
+
+            <!-- 5 -->
+            <Button Grid.Row="4" Grid.Column="0" Text="e" FontSize="16" BackgroundColor="#d9d9d9" TextColor="Black" Clicked="SabitButon_Clicked"/>
+            <Button Grid.Row="4" Grid.Column="1" Text="4" FontSize="20" BackgroundColor="White" TextColor="Black" Clicked="RakamButon_Clicked"/>
+            <Button Grid.Row="4" Grid.Column="2" Text="5" FontSize="20" BackgroundColor="White" TextColor="Black" Clicked="RakamButon_Clicked"/>
+            <Button Grid.Row="4" Grid.Column="3" Text="6" FontSize="20" BackgroundColor="White" TextColor="Black" Clicked="RakamButon_Clicked"/>
+            <Button Grid.Row="4" Grid.Column="4" Text="×" FontSize="20" BackgroundColor="#e6e6e6" TextColor="Black" Clicked="IslemButon_Clicked"/>
+
+            <!-- 6 -->
+            <Button Grid.Row="5" Grid.Column="0" Text="mod" FontSize="16" BackgroundColor="#d9d9d9" TextColor="Black" Clicked="IslemButon_Clicked"/>
+            <Button Grid.Row="5" Grid.Column="1" Text="1" FontSize="20" BackgroundColor="White" TextColor="Black" Clicked="RakamButon_Clicked"/>
+            <Button Grid.Row="5" Grid.Column="2" Text="2" FontSize="20" BackgroundColor="White" TextColor="Black" Clicked="RakamButon_Clicked"/>
+            <Button Grid.Row="5" Grid.Column="3" Text="3" FontSize="20" BackgroundColor="White" TextColor="Black" Clicked="RakamButon_Clicked"/>
+            <Button Grid.Row="5" Grid.Column="4" Text="-" FontSize="20" BackgroundColor="#e6e6e6" TextColor="Black" Clicked="IslemButon_Clicked"/>
+
+            <!-- 7 -->
+            <Button Grid.Row="6" Grid.Column="0" Text="±" FontSize="20" BackgroundColor="#d9d9d9" TextColor="Black" Clicked="IsaretDegistirButon_Clicked"/>
+            <Button Grid.Row="6" Grid.Column="1" Text="0" FontSize="20" BackgroundColor="White" TextColor="Black" Clicked="RakamButon_Clicked"/>
+            <Button Grid.Row="6" Grid.Column="2" Text="," FontSize="20" BackgroundColor="White" TextColor="Black" Clicked="VirguButon_Clicked"/>
+            <Button Grid.Row="6" Grid.Column="3" Text="=" FontSize="20" BackgroundColor="gray" TextColor="Black" Clicked="EsittirButon_Clicked"/>
+            <Button Grid.Row="6" Grid.Column="4" Text="+" FontSize="20" BackgroundColor="#e6e6e6" TextColor="Black" Clicked="IslemButon_Clicked"/>
+        </Grid>
+    </Grid>
+</ContentPage>
